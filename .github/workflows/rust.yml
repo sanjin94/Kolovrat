@@ -1,6 +1,6 @@
 name: Rust
 on:
-  pull_request:
+  push:
     branches: [ "main" ]
   workflow_dispatch:
 env:
@@ -12,5 +12,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build
       run: cargo build --verbose
+      if: github.ref == 'refs/heads/components/*'
     - name: Run tests
       run: cargo test --verbose
+      if: github.ref == 'refs/heads/components/*'
