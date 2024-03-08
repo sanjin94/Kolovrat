@@ -1,0 +1,12 @@
+[workspace]
+
+members = [
+  "cli",
+  "web_api",
+  "web_scraper",
+  "static_site_generator",
+  "content_analysis",
+  "shared",
+]
+
+resolver = "2"
